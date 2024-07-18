@@ -2,7 +2,8 @@
     materialized='incremental'
 ) }}
 
-select * from {{ source('src_jaffle_shop', 'orders')}} 
+select * from {{ source('src_jaffle_shop', 'orders')}} -- 1 lack -- 5min
+tomm - 5 records
 
 {% if is_incremental() %}
 

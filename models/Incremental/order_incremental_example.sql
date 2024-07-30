@@ -1,13 +1,22 @@
 {{ config(
-    materialized='incremental',
-    unique_key='id'
+    materialized = 'incremental',
+    unique_key = 'id'
 ) }}
 
-select * from {{ source('src_jaffle_shop', 'orders')}} 
-
+SELECT
+    *
+FROM
+    {{ source(
+        'src_jaffle_shop',
+        'orders'
+    ) }}
 
 {% if is_incremental() %}
-
-where _ETL_LOADED_AT > (Select max(_ETL_LOADED_AT) from {{this}})
-
+WHERE
+    _ETL_LOADED_AT > (
+        SELECT
+            MAX(_ETL_LOADED_AT)
+        FROM
+            {{ this }}
+    )
 {% endif %}

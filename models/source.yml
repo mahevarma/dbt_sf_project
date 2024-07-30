@@ -13,3 +13,5 @@ sources:
     schema: stripe
     tables:
       - name: payment
+      
+        

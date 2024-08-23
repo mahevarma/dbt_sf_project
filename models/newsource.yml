@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: src_ec
+    database: ec
+    schema: rw
+    tables:
+      - name: orders
+      - name: users
+      - name: products
+      - name: order_items
+
+

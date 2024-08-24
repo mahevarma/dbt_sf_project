@@ -1,7 +1,7 @@
 {{ config(materialized="table") }}
 
 with
-    user_data as (
+    stg_users as (
         select
             id as user_id,
             first_name,
@@ -24,4 +24,4 @@ with
     )
 
 select *
-from user_data
+from stg_users

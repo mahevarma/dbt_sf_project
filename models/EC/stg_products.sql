@@ -1,7 +1,5 @@
 {{ config(materialized="view") }}
 
-with
-    stg_products as (
 
         select
            id as product_id,
@@ -17,7 +15,4 @@ with
 
         from {{ source('src_ec','products')}}
 
-    )
-
-select *
-from stg_products
+  

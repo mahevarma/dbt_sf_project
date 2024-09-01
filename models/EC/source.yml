@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: src_ec
+    description: test_doc
     database: ec
     schema: rw
     tables:

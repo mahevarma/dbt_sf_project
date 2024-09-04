@@ -34,9 +34,9 @@ UserSpending as(
     GROUP BY
        temp_order_items.user_id
       
-)
+),
 
-
+final as(
 SELECT
     user_id,
     TotalAmountSpent
@@ -45,3 +45,6 @@ FROM
 ORDER BY
     TotalAmountSpent DESC
 LIMIT 5
+)
+
+select * from final
